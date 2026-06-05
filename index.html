@@ -1,271 +1,375 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio</title>
+    <meta name="description" content="Vladislav Grigorev - Java Backend Engineer building scalable distributed systems, event-driven platforms, and reliable cloud infrastructure.">
+    <title>Vladislav Grigorev | Java Backend Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/fdaac89f29.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
 </head>
 
 <body>
-    <!-- ==============header==================== -->
-    <div id="header">
-        <div class="container">
-            <nav>
-                <a href="#"><img src="img/logo.png" class="logo" alt="logo"></a>
-                <ul id="sidemenu">
-                    <li><a href="#header">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <!-- <li><a href="img/CV.pdf" class="cv-btn" download>Download CV</a></li> -->
-                    <i class="fas fa-times" onclick="closemenu()"></i>
+    <div class="background-glow background-glow-left"></div>
+    <div class="background-glow background-glow-right"></div>
+
+    <header class="site-header">
+        <div class="container nav-shell">
+            <a href="#home" class="brand" aria-label="Go to home">
+                <span class="brand-mark">VG</span>
+            </a>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation">
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="site-nav" aria-label="Primary">
+                <ul id="site-menu">
+                    <li><a href="#about" data-i18n="nav.about">About</a></li>
+                    <li><a href="#expertise" data-i18n="nav.expertise">Expertise</a></li>
+                    <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+                    <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+                    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+                    <li class="nav-action-item"><a href="img/CV.pdf" class="nav-cta" target="_blank" rel="noopener noreferrer" data-i18n="nav.cv">Open CV</a></li>
+                    <li class="nav-action-item nav-language-item">
+                        <div class="lang-switch" aria-label="Language switcher">
+                            <button type="button" class="lang-btn active" data-lang="en">EN</button>
+                            <button type="button" class="lang-btn" data-lang="ru">RU</button>
+                        </div>
+                    </li>
                 </ul>
-                <i class="fas fa-bars" onclick="openmenu()"></i>
-
             </nav>
-
-            <div class="header-text">
-                <div class="text-1">Hi, my name is </div>
-                <div class="text-2">Vladislav Grigorev</div>
-                <div class="text-3"> And I'm a <span class="typing"></span></div>
-            </div>
         </div>
-    </div>
-    <!-- ===================about================ -->
-    <div id="about">
-        <div class="container">
-            <div class="row">
-                <!-- Колонка с изображением -->
-                <div class="about-col-1">
-                    <img src="img/user.png" alt="user">
-                </div>
-                <!-- Колонка с текстовым контентом -->
-                <div class="about-col-2">
-                    <h1 class="sub-title">About Me</h1>
-                    <p class="about-description">
-                        I am a committed <span class="highlight">Software Engineer</span> with experience in backend
-                        development and DevOps. I’ve successfully contributed to projects
-                        where I optimized a microservices-based application, <span class="highlight">reducing latency by
-                            50%</span> and significantly boosting manager satisfaction. I have also designed and
-                        implemented new features in Java applications, resulting in <span class="highlight">improved
-                            customer satisfaction</span>. Additionally, I developed proactive monitoring solutions,
-                        which <span class="highlight">minimized system downtime by 25%</span> and enhanced issue
-                        detection and resolution.<br> Passionate about building scalable and efficient systems, <span
-                            class="highlight">I focus on delivering innovative solutions that address real-world
-                            challenges</span> and provide measurable value.
+    </header>
+
+    <main>
+        <section class="hero section" id="home">
+            <div class="container hero-layout">
+                <div class="hero-copy reveal">
+                    <div class="hero-identity interactive-card tilt-card hero-identity-card" data-tilt="12">
+                        <div class="hero-avatar-shell">
+                            <img src="img/user.jpg" alt="Vladislav Grigorev" class="hero-avatar" width="320" height="320" decoding="async" fetchpriority="high">
+                        </div>
+                        <div class="hero-identity-copy">
+                            <p class="hero-name">Vladislav Grigorev</p>
+                            <p class="hero-role-static" data-i18n="hero.identityRole">Java Backend Engineer</p>
+                            <p class="hero-role-context" data-i18n="hero.identityContext">Fintech - backend platforms - distributed systems</p>
+                        </div>
+                    </div>
+
+                    <span class="eyebrow" data-i18n="hero.eyebrow">High-load backend - event-driven systems - platform reliability</span>
+                    <h1 data-i18n="hero.title">I build Java backends for real load</h1>
+
+                    <div class="hero-typed-line" aria-live="polite">
+                        <span id="hero-typed-role"></span><span class="typed-caret"></span>
+                    </div>
+
+                    <p class="hero-description" data-i18n="hero.description">
+                        5+ years in fintech. I ship backend systems that stay predictable under load.
                     </p>
 
-                    <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn btn-primary" data-i18n="hero.ctaPrimary">Let's talk</a>
+                        <a href="https://github.com/vladislav77777" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" data-i18n="hero.ctaSecondary">GitHub</a>
                     </div>
-                    <!-- Таб с навыками -->
-                    <div class="tab-contents active-tab" id="skills">
-                        <ul class="skills-list">
-                            <li class="skills-item">
-                                <span class="highlight">Java Developer</span> <br>
-                                Spring, SQL, Liquibase, REST APIs, gRPC, Redis, Design Patterns, Microservices
-                            </li>
-                            <li class="skills-item">
-                                <span class="highlight">DevOps Engineer</span> <br>
-                                Docker, Kubernetes, Nginx, Prometheus, Grafana, ELK Stack, AWS
-                            </li>
-                            <li class="skills-item">
-                                <span class="highlight">Web Developer</span> <br>
-                                Figma, HTML5, CSS3, JavaScript, TypeScript, React, SvelteKit
-                            </li>
-                        </ul>
+
+                    <ul class="hero-facts">
+                        <li><i class="fa-solid fa-location-dot"></i> <span data-i18n="hero.fact1">Cyprus • GMT+3</span></li>
+                        <li><i class="fa-solid fa-language"></i> <span data-i18n="hero.fact2">English C1 • Open to remote</span></li>
+                        <li><i class="fa-solid fa-graduation-cap"></i> <span data-i18n="hero.fact3">Innopolis University • BSc CS</span></li>
+                    </ul>
+                </div>
+
+                <div class="hero-panel reveal interactive-card tilt-card" data-tilt="10">
+                    <div class="hero-panel-header">
+                        <span class="status-badge" data-i18n="panel.status">Currently at Maxim Technology</span>
+                        <p class="hero-panel-note" data-i18n="panel.note"></p>
                     </div>
-                    <!-- Таб с опытом -->
-                    <div class="tab-contents" id="experience">
-                        <ul class="experience-list">
-                            <li class="experience-item">
-                                <div class="company-logo">
-                                    <img src="img/maxim-logo.png" alt="Maxim Technology Logo" class="company-logo-img">
-                                </div>
-                                <div class="experience-details">
-                                    <span class="highlight date">Aug 2024 - Present</span>
-                                    <h3 class="company-name">Maxim Technology</h3>
-                                    <p class="job-description">
-                                        Developed and maintained Java applications, improved manager experience, and
-                                        boosted customer satisfaction by 50%. Played a key role in integrating <span
-                                            class="highlight">microservices</span> and designed application <span
-                                            class="highlight">monitoring solutions</span>. Worked with technologies like
-                                        <span class="highlight">Spring</span>, <span
-                                            class="highlight">Elasticsearch</span>, <span
-                                            class="highlight">Jenkins</span>, <span class="highlight">PostgreSQL</span>,
-                                        and <span class="highlight">GitLab</span>.
-                                    </p>
-                                </div>
-                            </li>
-                            <li class="experience-item">
-                                <div class="company-logo">
-                                    <img src="img/innopolis-logo.png" alt="Innopolis University Logo"
-                                        class="company-logo-img">
-                                </div>
-                                <div class="experience-details">
-                                    <span class="highlight date">Apr 2023 - Aug 2024</span>
-                                    <h3 class="company-name">Innopolis University</h3>
-                                    <p class="job-description">
-                                        Assisted in developing <span class="highlight">AI-powered applications</span>
-                                        and meeting room reservation systems. Leveraged <span class="highlight">Spring
-                                            Boot</span>, <span class="highlight">PostgreSQL</span>, <span
-                                            class="highlight">Docker</span>, and <span class="highlight">CI/CD
-                                            tools</span>, improving system scalability and reducing build times by 25%.
-                                    </p>
-                                </div>
-                            </li>
-                            <li class="experience-item">
-                                <div class="company-logo">
-                                    <img src="img/tinkoff-logo.png" alt="Tinkoff Academy Logo" class="company-logo-img">
-                                </div>
-                                <div class="experience-details">
-                                    <span class="highlight date">2022 - 2023</span>
-                                    <h3 class="company-name">Tinkoff Academy</h3>
-                                    <p class="job-description">Completed an advanced software engineering course,
-                                        focusing on Java development, microservices, and database management.</p>
-                                </div>
-                            </li>
-                        </ul>
+
+                    <div class="stats-grid">
+                        <article class="stat-card interactive-card lift-card">
+                            <span class="stat-value" data-target="5" data-suffix="+">0</span>
+                            <span class="stat-label" data-i18n="stats.years">Years in backend</span>
+                        </article>
+                        <article class="stat-card interactive-card lift-card">
+                            <span class="stat-value" data-target="14" data-suffix="k">0</span>
+                            <span class="stat-label" data-i18n="stats.rps">Peak ride-flow RPS</span>
+                        </article>
+                        <article class="stat-card interactive-card lift-card">
+                            <span class="stat-value" data-target="10" data-prefix="$" data-suffix="M+">0</span>
+                            <span class="stat-label" data-i18n="stats.transactions">Monthly transactions</span>
+                        </article>
+                        <article class="stat-card interactive-card lift-card">
+                            <span class="stat-value" data-target="2" data-suffix="x">0</span>
+                            <span class="stat-label" data-i18n="stats.incidents">Core query speedup</span>
+                        </article>
                     </div>
-                    <!-- Таб с образованием -->
-                    <div class="tab-contents" id="education">
-                        <ul class="education-list">
-                            <li class="education-item">
-                                <div class="education-content">
-                                    <img src="img/innopolis-logo.png" alt="Bachelor Logo" class="education-logo">
-                                    <div class="education-details">
-                                        <span class="highlight">2022 - 2026</span> <br>
-                                        <p class="edu-description">Bachelor degree at Innopolis University</p>
-                                    </div>
-                                </div>
-                            </li>
+
+                    <div class="focus-card interactive-card lift-card">
+                        <p data-i18n="panel.cardTitle">Core strengths</p>
+                        <ul>
+                            <li data-i18n="panel.cardItem1">Scalable Java services for core product flows</li>
+                            <li data-i18n="panel.cardItem2">Reliable event-driven pipelines with clean delivery</li>
+                            <li data-i18n="panel.cardItem3">Production systems that stay debuggable under load</li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- ==================services================ -->
-    <div id="services">
-        <div class="container">
-            <h1 class="sub-title">My Services</h1>
-            <div class="services-list">
-                <div>
-                    <i class="fa-solid fa-server"></i>
-                    <h2>Backend Development</h2>
-                    <p>Proficient in building scalable, secure, and efficient backend systems using Java, Spring, SQL,
-                        and microservices architecture.</p>
-                    <a href="https://github.com/vladislav77777" target="_blank" class="btn-link">Learn more</a>
+        <section class="section" id="about">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <span class="section-kicker" data-i18n="about.kicker">About</span>
+                    <h2 data-i18n="about.title">Backend for real products</h2>
                 </div>
-                <div>
-                    <i class="fa-solid fa-gears"></i>
-                    <h2>DevOps Solutions</h2>
-                    <p>Experienced in setting up CI/CD pipelines, containerization with Docker, and deploying
-                        applications using K8s and cloud platforms.</p>
-                    <a href="https://github.com/vladislav77777" target="_blank" class="btn-link">Learn more</a>
-                </div>
-                <div>
-                    <i class="fa-solid fa-code"></i>
-                    <h2>Web Development</h2>
-                    <p>Capable of creating modern and responsive web applications using HTML, CSS, JavaScript, and
-                        frameworks like React and SvelteKit.</p>
-                    <a href="https://github.com/vladislav77777" target="_blank" class="btn-link">Learn more</a>
+
+                <div class="about-grid">
+                    <article class="card reveal interactive-card lift-card">
+                        <h3 data-i18n="about.profileTitle">Profile</h3>
+                        <p data-i18n="about.profileText1">
+                            I work on distributed Java services where mistakes are visible fast: pricing, payment flows, order processing, file handling, and internal event pipelines. The job is usually a mix of system design, debugging under pressure, and making sure the next version is simpler to run than the last one.
+                        </p>
+                        <p data-i18n="about.profileText2">
+                            I care about measurable outcomes more than presentation. Faster queries, fewer production incidents, cleaner integrations, better observability, and services the team can actually maintain - that is the standard.
+                        </p>
+                    </article>
+
+                    <article class="card reveal interactive-card lift-card">
+                        <h3 data-i18n="about.highlightsTitle">Highlights</h3>
+                        <ul class="feature-list">
+                            <li data-i18n="about.highlight1">Led 4 backend engineers on a high-load mobility backend</li>
+                            <li data-i18n="about.highlight2">3-4k RPS in peak ride flows</li>
+                            <li data-i18n="about.highlight3">$10M+ in monthly ride transactions</li>
+                            <li data-i18n="about.highlight4">12k transaction requests per day</li>
+                            <li data-i18n="about.highlight5">2x faster PostgreSQL queries</li>
+                        </ul>
+                    </article>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
 
+        <section class="section" id="expertise">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <span class="section-kicker" data-i18n="expertise.kicker">Expertise</span>
+                    <h2 data-i18n="expertise.title">Production stack.</h2>
+                </div>
 
-    <!-- ===================portfolio================== -->
-    <div id="portfolio">
-        <div class="container">
-            <h1 class="sub-title">My Work & Projects</h1>
-            <div class="work-list">
-                <div class="work">
-                    <img src="img/work-1.jpg" alt="">
-                    <div class="layer">
-                        <h3>Track Content Bot</h3>
-                        <p>An application for tracking content updates via links. When new events appear, a notification
-                            is sent via Telegram.
-                            It uses Spring, PostgreSQl, Liquibase, JOOQ, Kafka, Docker, CI/CD</p>
-                        <a href="https://github.com/vladislav77777/java-backend-course"  target="_blank"><i
-                                class="fas fa-external-link-alt"></i></a>
-                    </div>
+                <div class="expertise-grid">
+                    <article class="card reveal interactive-card lift-card">
+                        <h3 data-i18n="expertise.backendTitle">Backend Engineering</h3>
+                        <p>Spring Boot, Spring Web, Data, Security, Cloud, Cache, Scheduling, Retry, Transactional, Hibernate, MapStruct, Jakarta Validation.</p>
+                    </article>
+                    <article class="card reveal interactive-card lift-card">
+                        <h3 data-i18n="expertise.dataTitle">Data & Messaging</h3>
+                        <p>PostgreSQL, MongoDB, Redis, Liquibase, Flyway, Apache Kafka, RabbitMQ, Confluent Schema Registry, event-driven architectures.</p>
+                    </article>
+                    <article class="card reveal interactive-card lift-card">
+                        <h3 data-i18n="expertise.devopsTitle">DevOps & Delivery</h3>
+                        <p>Docker, Kubernetes, Jenkins, CI/CD, GitHub, GitLab, Maven, Gradle, Linux, REST/OpenAPI, OAuth2, SSL/TLS.</p>
+                    </article>
+                    <article class="card reveal interactive-card lift-card">
+                        <h3 data-i18n="expertise.qualityTitle">Quality & Observability</h3>
+                        <p>JUnit 5, Mockito, Testcontainers, JMeter, VisualVM, Prometheus, Grafana, Elasticsearch, Jaeger, AWS, MinIO, Amazon S3.</p>
+                    </article>
                 </div>
-                <div class="work">
-                    <img src="img/work-3.jpg" alt="">
-                    <div class="layer">
-                        <h3>CookAInno</h3>
-                        <p>An AI powered recipe management and suggestion application with food recognition and
-                            personalized recommendations.</p>
-                        <a href="https://docs.google.com/presentation/d/1e_NvU9qRJraqvstBxZ55JZ4GOy6MMuxrxdSo-gP1Cd8/edit#slide=id.p" target="_blank"><i
-                                class="fas fa-external-link-alt"></i></a>
-                    </div>
+
+                <div class="capabilities-grid">
+                    <article class="capability-card reveal interactive-card lift-card">
+                        <i class="fa-solid fa-microchip"></i>
+                        <h3 data-i18n="capabilities.highloadTitle">High-load backend systems</h3>
+                        <p data-i18n="capabilities.highloadText">Designing services that keep their shape under traffic spikes and tight SLAs.</p>
+                    </article>
+                    <article class="capability-card reveal interactive-card lift-card">
+                        <i class="fa-solid fa-diagram-project"></i>
+                        <h3 data-i18n="capabilities.eventTitle">Event-driven architectures</h3>
+                        <p data-i18n="capabilities.eventText">Building asynchronous flows with retries, DLQ, schema safety, and traceability built in.</p>
+                    </article>
+                    <article class="capability-card reveal interactive-card lift-card">
+                        <i class="fa-solid fa-shield-heart"></i>
+                        <h3 data-i18n="capabilities.reliabilityTitle">Reliability engineering</h3>
+                        <p data-i18n="capabilities.reliabilityText">Improving uptime, reducing incidents, and making system behavior visible enough to operate well.</p>
+                    </article>
                 </div>
-                <div class="work">
-                    <img src="img/work-2.jpg" alt="">
-                    <div class="layer">
-                        <h3>Tic Tac Toe game</h3>
-                        <p>Everyone is familiar with Tic-tac-toe. Create a version of this game using the Swing graphics
-                            library. Teach a computer to play this game and compete against both your friend and AI.</p>
-                        <a href="https://github.com/vladislav77777/Desktop_TicTacToe" target="_blank"><i
-                                class="fas fa-external-link-alt"></i></a>
+            </div>
+        </section>
+
+        <section class="section" id="experience">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <span class="section-kicker" data-i18n="experience.kicker">Experience</span>
+                    <h2 data-i18n="experience.title">Recent roles and what changed because of the work.</h2>
+                </div>
+
+                <div class="timeline">
+                    <article class="timeline-card reveal interactive-card tilt-card" data-tilt="7">
+                        <div class="timeline-meta">
+                            <span class="timeline-period" data-i18n="experience.maximPeriod">08/2022 - Present</span>
+                            <div class="timeline-company">
+                                <img src="img/maxim-logo.png" alt="Maxim logo">
+                                <div>
+                                    <h3>MAXIM</h3>
+                                    <p data-i18n="experience.maximRole">Software Engineer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="feature-list">
+                            <li data-i18n="experience.maxim1">Led 4 backend engineers on ride pricing and order processing services handling 3-4k RPS.</li>
+                            <li data-i18n="experience.maxim2">Supported a platform generating $10M+ in monthly ride transactions.</li>
+                            <li data-i18n="experience.maxim3">Improved ride order conversion by ~21% by reducing pricing latency.</li>
+                            <li data-i18n="experience.maxim4">Dropped critical PostgreSQL reads from 900 ms to 450 ms with query redesign and composite indexes.</li>
+                            <li data-i18n="experience.maxim5">Reduced database load with Redis + Spring Cache on hot reads.</li>
+                            <li data-i18n="experience.maxim6">Added Kafka DLQ, retry with backoff, and safer file integrity checks.</li>
+                        </ul>
+                    </article>
+
+                    <article class="timeline-card reveal interactive-card tilt-card" data-tilt="7">
+                        <div class="timeline-meta">
+                            <span class="timeline-period" data-i18n="experience.allicaPeriod">02/2021 - 07/2022</span>
+                            <div class="timeline-company">
+                                <img src="img/allica-logo.svg" alt="Allica logo">
+                                <div>
+                                    <h3>ALLICA</h3>
+                                    <p data-i18n="experience.allicaRole">Backend Engineer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="feature-list">
+                            <li data-i18n="experience.allica1">Stabilized banking API integrations with retries, timeouts, and circuit breaking.</li>
+                            <li data-i18n="experience.allica2">Supported up to 12k transaction requests per day with resilient REST flows.</li>
+                            <li data-i18n="experience.allica3">Improved platform reliability to 99.6% uptime by redesigning event queue processing.</li>
+                            <li data-i18n="experience.allica4">Automated Central Bank document flows and cut manual operator work.</li>
+                        </ul>
+                    </article>
+
+                    <article class="timeline-card reveal interactive-card tilt-card" data-tilt="6">
+                        <div class="timeline-meta">
+                            <span class="timeline-period" data-i18n="experience.eduPeriod">2022 - 2026</span>
+                            <div class="timeline-company">
+                                <img src="img/innopolis-logo.png" alt="Innopolis University logo">
+                                <div>
+                                    <h3>Innopolis University</h3>
+                                    <p data-i18n="experience.eduRole">Bachelor's Degree - Computer Science (Software Engineering)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="timeline-note" data-i18n="experience.eduText">Formal software engineering training backed by hands-on backend projects and production-style systems work.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="projects">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <span class="section-kicker" data-i18n="projects.kicker">Projects</span>
+                    <h2 data-i18n="projects.title">Selected projects</h2>
+                </div>
+
+                <div class="projects-grid">
+                    <article class="project-card reveal interactive-card lift-card">
+                        <img src="img/work-1.jpg" alt="Link Tracker project preview">
+                        <div class="project-body">
+                            <div class="tag-row">
+                                <span>Spring Boot</span>
+                                <span>Kafka</span>
+                                <span>PostgreSQL</span>
+                            </div>
+                            <h3>Link Tracker</h3>
+                            <p data-i18n="projects.linkTracker">Tracks updates from user-defined links and sends Telegram notifications when something changes. Built as a backend-heavy project with asynchronous processing and clean service boundaries.</p>
+                            <a href="https://github.com/vladislav77777/java-backend-course" target="_blank" rel="noopener noreferrer" data-i18n="projects.open">Open project</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal interactive-card lift-card">
+                        <img src="img/work-3.jpg" alt="CookAInno project preview">
+                        <div class="project-body">
+                            <div class="tag-row">
+                                <span>AI</span>
+                                <span>Product</span>
+                                <span>Recommendations</span>
+                            </div>
+                            <h3>CookAInno</h3>
+                            <p data-i18n="projects.cookainno">Analyzes fridge contents and food preferences to suggest recipes and short meal plans. More product-oriented than infrastructure-heavy, but useful as an end-to-end build.</p>
+                            <a href="https://github.com/IU-Capstone-Project-2024/cookainno" target="_blank" rel="noopener noreferrer" data-i18n="projects.open">Open project</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal interactive-card lift-card">
+                        <img src="img/work-2.jpg" alt="Fractal Generator project preview">
+                        <div class="project-body">
+                            <div class="tag-row">
+                                <span>Java</span>
+                                <span>Multithreading</span>
+                                <span>Algorithms</span>
+                            </div>
+                            <h3>Fractal Generator</h3>
+                            <p data-i18n="projects.fractal">Multithreaded fractal renderer focused on concurrency, rendering, and performance. A smaller project, but a good example of careful implementation work.</p>
+                            <a href="https://github.com/vladislav77777/java-course-2023/tree/main/src/main/java/edu/project4" target="_blank" rel="noopener noreferrer" data-i18n="projects.open">Open project</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <div class="container">
+                <div class="contact-shell reveal interactive-card lift-card">
+                    <div class="contact-copy">
+                        <span class="section-kicker" data-i18n="contact.kicker">Contact</span>
+                        <h2 data-i18n="contact.title">Available for backend work</h2>
+                        <p data-i18n="contact.text">Reach out if you need Java backend, integrations, or high-load services.</p>
+                        <div class="contact-actions contact-actions-left">
+                            <a href="img/CV.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-i18n="contact.cv">Open CV</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-item contact-item-email">
+                            <div class="contact-main">
+                                <i class="fa-solid fa-envelope"></i>
+                                <a href="mailto:vgrigorev2004s@gmail.com" class="contact-link">vgrigorev2004s@gmail.com</a>
+                            </div>
+                            <button type="button" class="contact-copy-icon" id="copy-email" data-email="vgrigorev2004s@gmail.com">
+                                <i class="fa-regular fa-copy"></i>
+                                <span class="sr-only" data-i18n="contact.copy">Copy email</span>
+                            </button>
+                        </div>
+                        <a href="https://t.me/vladislove_grigorev" class="contact-item" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-telegram"></i>
+                            <span>@vladislove_grigorev</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/grigorev-vladislove" class="contact-item" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/vladislav77777" class="contact-item" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+
+                        <p class="copy-feedback" id="copy-feedback" aria-live="polite"></p>
                     </div>
                 </div>
             </div>
-            <a href="https://github.com/vladislav77777?tab=repositories"  target="_blank" class="btn">See more</a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-shell">
+            <p>&copy; <span id="current-year"></span> Vladislav Grigorev. <span data-i18n="footer.text">Built to be clear and focused.</span></p>
         </div>
-    </div>
+    </footer>
 
-    <!-- =================contact me=================== -->
-    <div id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="contact-left">
-                    <h1 class="sub-title">Contact Me</h1>
-                    <p><i class="fas fa-paper-plane"></i> <a href="mailto:vladoss7700@mail.ru"
-                            class="email-link">vladoss7700@mail.ru</a></p>
-                    </p>
-                    <p><i class="fa-solid fa-square-phone"></i>+7 (981) 967-06-84</p>
-                    <div class="social-icons">
-                        <a href="https://t.me/VLADISLAVVV777 "><i class="fa-brands fa-telegram"></i></a>
-                        <a href="https://github.com/vladislav77777"><i class="fa-brands fa-github"></i></a>
-                        <a href="https://www.instagram.com/vladoss7700/"><i class="fab fa-instagram"></i></a>
-                        <a href="https://vk.com/vladislavv77"><i class="fa-brands fa-vk"></i></a>
-                    </div>
-                    <a href="img/CV.pdf"  target="_blank" class="btn btn2">Download CV</a>
-                </div>
-                <div class="contact-right" onsubmit="sendEmail(event)">
-                    <form>
-                        <input type="email" name="Name" id="sender" placeholder="Your email" required>
-                        <input type="email" name="Name" id="recipient" placeholder="To" value="vladoss7700@mail.ru"
-                            required hidden>
-                        <input type="text" name="subject" id="subject" placeholder="Subject" required>
-                        <textarea name="message" id="message" rows="6" placeholder="Your Message"></textarea>
-                        <button type="submit" class="btn btn2">Email me</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ===============copyright================= -->
-    <div class="copyright">
-        <p>Copyright &copy; 2025 Vladi. Made with <i class="fas fa-heart"></i> from Innopolis</p>
-    </div>
-
-
-    <script src="script.js"> </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
+
