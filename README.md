@@ -1,6 +1,6 @@
 Portfolio site
 ========================
-This is my personal portfolio website showcasing my skills, projects, and experience as a backend Java Developer. It highlights my expertise in building scalable applications, setting up CI/CD pipelines, and creating modern web solutions to demonstrate my professional growth and capabilities.
+This is my personal portfolio website showcasing my skills, projects, and experience as a Software Engineer working with Java and Go. It highlights my expertise in building distributed systems for fintech and mobility, improving production reliability, and scaling backend services.
 
 Used technologies:
 - HTML :smiley_cat:
